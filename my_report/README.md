@@ -1,8 +1,8 @@
 # Lesson: Interaction Design
 
 ### First and Last Name: xxx
-### University Registration Number: dpsdxxxxx
-### GitHub Personal Profile: xxx
+### University Registration Number: dpsd19140
+### GitHub Personal Profile: https://github.com/DPSD19140
 ### Augmented Reality Personal Repository: xxx
 
 # Introduction
