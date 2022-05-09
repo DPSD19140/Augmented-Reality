@@ -11,13 +11,28 @@
     <!-- speech command component -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
     <script src="build/aframe-speech-command-component.js"></script>
-
+    
+ <!-- libraries for recognision pattern -->
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    
 
    
 
         <body style="margin : 0px; overflow: hidden;">
         <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded 
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+            
+<a-assets>
+        <a-asset-item id="dpsd19140_marker0" src="https://github.com/DPSD19140/Augmented-Reality/blob/main/marker_based/assets/dpsd19140_marker0.jpg"></a-asset-item>
+    </a-assets>
+  
+  <a-marker type="pattern" preset="custom" url="\assets\pattern-dpsd19140_marker0.1.patt"> 
+      <a-box1  text value='SOFIA PANTELOPOULOU' position='0 0.5 0' color="yellow"><a-image src="dpsd19140_marker0.jpg"></a-image></a-box1></a-marker>
 
             
             <a-marker preset="hiro">
