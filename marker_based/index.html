@@ -4,50 +4,48 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
     <script src="build/aframe-ar.js"></script>
-    
+
     <!-- particles system component -->
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-    
+
     <!-- speech command component -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
-    <script src="build/aframe-speech-command-component.js"></script> 
+    <script src="build/aframe-speech-command-component.js"></script>
+
+
+
     
-    <!-- libraries for recognision pattern -->
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    </head>
-    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    
+
 
     <body style="margin : 0px; overflow: hidden;">
         <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-
-    <a-assets>
-        <a-asset-item id="dpsd19140_marker0" src="https://github.com/DPSD19140/Augmented-Reality/blob/main/marker_based/assets/dpsd19140_marker0.jpg"></a-asset-item>
-    </a-assets>
-  
-  <a-marker type="pattern" preset="custom" url="\assets\pattern-dpsd19140_marker0.1.patt"> 
-      <a-box1  text value='SOFIA PANTELOPOULOU' position='0 0.5 0' color="yellow"><a-image src="dpsd19140_marker0.jpg"></a-image></a-box1></a-marker>
+            vr-mode-ui="enabled: false;"
+            renderer="logarithmicDepthBuffer: true;"
+            embedded
+            arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
 
+            <a-marker preset="hiro">
+
+                <a-entity id="box" geometry="primitive: box; width: 0.2; depth: 0.2; height: 0.2;" position="0 0 0" material="color: #4CC3D9"> </a-entity>
+
+                <a-entity id="sphere" geometry="primitive: sphere; radius:0.3;" position="0.5 0 0" material="color: #EF2D5E"> </a-entity>
+
+                <a-entity id="cylinder" geometry="primitive: cylinder;  height: 0.4; radius: 0.2" position="-0.5 0 0"
+                material="color: #FFC65D"></a-entity>
+                           
+                      
+
+                <a-entity id="annyang" annyang-speech-recognition></a-entity>
+
+                <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 10000000"
+                          visible="false"
+                          speech-command__start="command: start; type: attribute; attribute: visible; value: true;"
+                          speech-command__stop="command: stop; type: attribute; attribute: visible; value: false;">
+                </a-entity>
 
 
-
-
-
-
-
-        <a-marker preset="hiro">
-            <a-entity id="box" geometry="primitive: box; width: 0.2; depth: 0.2; height: 0.2" position="0 0 0" material="color: #4CC3D9"></a-entity>
-        </a-marker>
-
-         <!-- use this <a-entity camera> to support multiple-markers-->
+            </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
     </body>
